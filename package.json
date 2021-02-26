@@ -1,0 +1,50 @@
+{
+  "name": "ftd-automation-cypress",
+  "version": "1.0.0",
+  "description": "PoC - FTD-Automation",
+  "author": "Soledad Pavicich",
+  "main": "index.js",
+  "scripts": {
+    "junit-cleanup": "rm -fr results",
+    "cy:browser": "source .env; cypress run --browser chrome",
+    "cy:run": "source .env; cypress run",
+    "cy:run:local": "cypress run --config-file cypress/config/localhost.json",
+    "cy:run-headless": "source .env; cypress run --headless",
+    "cy:run-report": "npm run junit-cleanup; cypress run --reporter junit",
+    "cy:run-record": "node_modules\\.bin\\cypress run --record --key b36d6c3a-f9fb-444f-a085-615c35dc9891",
+    "cy:open:prod": "cypress open --config-file cypress/config/prod.json",
+    "cy:open:local": "cypress open --config-file cypress/config/localhost.json",
+    "cy:spec": "cypress run --spec"
+  },
+  "devDependencies": {
+    "cypress": "^6.1.0",
+    "cypress-cucumber-preprocessor": "^2.5.4",
+    "cypress-junit-reporter": "^1.3.1",
+    "cypress-localstorage-commands": "^1.2.1",
+    "cypress-multi-reporters": "^1.4.0",
+    "cypress-slack-reporter": "^0.9.0",
+    "cypress-terminal-report": "^1.4.1",
+    "cypress-wait-until": "^1.7.1",
+    "cypress-xpath": "^1.6.1",
+    "mocha": "^6.2.2",
+    "mochawesome": "^4.1.0",
+    "mochawesome-merge": "^2.1.0",
+    "mochawesome-report-generator": "^4.1.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "js-levenshtein": "^1.1.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soledadpavicich/ftd-automation-Cypress.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soledadpavicich/ftd-automation-Cypress/issues"
+  },
+  "homepage": "https://github.com/soledadpavicich/ftd-automation-Cypress#readme"
+}
